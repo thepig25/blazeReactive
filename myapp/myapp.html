@@ -3,33 +3,26 @@
 		<title>Blaze Test</title>
 		<script type="text/spacebars" name="main">
 
-
-			<div id="greeting">
+			<div class="video">
 				<iframe width="560" height="315" src="https://www.youtube.com/embed/s4ARc6ULKtQ" frameborder="0" allowfullscreen></iframe>
 
+			</div>
 
-				hello  <b>{{name}}</b>
+			<div id="cartApp">
+
+				{{#each product}}
+				<h2>Title:  <b>{{productTitle}}</b></h2>
+				<p>Quantity:  <b>{{quantity}}</b></p>
+				<p>Monthly Cost:  <b>${{monthlyCost}}</b></p>
+				<p>Upfront Cost:  <b>${{upfrontCost}}</b></p>
+				{{/each}}
+				<p>Update Items: <button class="update" type="button">Update</button></p>
 			</div>
 
 		</script>
 		<script src="blaze.js"></script>
-		<script type="text/javascript">
-			var yourName = new Blaze.Var("Ciaran");
-
-			Template.main.helpers({
-				name: function () {
-					return yourName.get();
-				}
-
-			});
-
-		</script>
+		<script src="myapp.js"></script>
 	</head>
 	<body>
 	</body>
 </html>
-
-
-
-
-
