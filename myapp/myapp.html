@@ -2,7 +2,12 @@
 	<head>
 		<title>Blaze Test</title>
 		<script type="text/spacebars" name="main">
+
+
 			<div id="greeting">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/s4ARc6ULKtQ" frameborder="0" allowfullscreen></iframe>
+
+
 				hello  <b>{{name}}</b>
 			</div>
 
@@ -13,7 +18,7 @@
 
 			Template.main.helpers({
 				name: function () {
-					return yourName.get().toUpperCase();
+					return yourName.get();
 				}
 
 			});
@@ -21,7 +26,6 @@
 		</script>
 	</head>
 	<body>
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/s4ARc6ULKtQ" frameborder="0" allowfullscreen></iframe>
 	</body>
 </html>
 
