@@ -1,13 +1,31 @@
-<head>
-  <title>myapp</title>
-</head>
+<html>
+	<head>
+		<title>Blaze Test</title>
+		<script type="text/spacebars" name="main">
+			<div id="greeting">
+				hello  <b>{{name}}</b>
+			</div>
 
-<body>
-  {{> hello}}
-</body>
+		</script>
+		<script src="blaze.js"></script>
+		<script type="text/javascript">
+			var yourName = new Blaze.Var("Ciaran");
 
-<template name="hello">
-  <h1>Hello World!</h1>
-  {{greeting}}
-  <input type="button" value="Click" />
-</template>
+			Template.main.helpers({
+				name: function () {
+					return yourName.get().toUpperCase();
+				}
+
+			});
+
+		</script>
+	</head>
+	<body>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/s4ARc6ULKtQ" frameborder="0" allowfullscreen></iframe>
+	</body>
+</html>
+
+
+
+
+

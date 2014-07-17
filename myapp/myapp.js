@@ -3,7 +3,7 @@ if (Meteor.isClient) {
     return "Welcome to myapp.";
   };
 
-  Template.hello.events({
+  Template.main.events({
     'click input': function () {
       // template data, if any, is available in 'this'
       if (typeof console !== 'undefined')
