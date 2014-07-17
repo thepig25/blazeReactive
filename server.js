@@ -1,14 +1,15 @@
 var express = require('express');
-var app = express.createServer();
+var app = express();
 
-app.configure(function(){
-  app.use(express.bodyParser());
-});
 
-app.post('/ReceiveJSON', function(req, res){
-  console.log(req.body);
-  res.send('ok');
-});
 
-app.listen(3000);
-console.log('listening to http://localhost:3000');
+// Middleware
+app.use(express.bodyParser()); // For form data.
+
+// Default folder is the public sub-folder.
+app.use(express.static(__dirname + '/public'));
+
+
+app.listen(4300);
+
+console.log('Server running, to view: http://localhost:4300');
