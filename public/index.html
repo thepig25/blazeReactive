@@ -1,27 +1,49 @@
 <html>
 	<head>
 		<title>Blaze Test</title>
+		<link rel="stylesheet" href="bower_components/foundation/css/foundation.css" />
+        <script src="bower_components/foundation/js/vendor/modernizr.js"></script>
+        <script src="bower_components/foundation/js/vendor/jquery.js"></script>
+         <script src="bower_components/foundation/js/foundation.min.js"></script>
+	</head>
+	<body>
 		<script type="text/spacebars" name="main">
 
 			<div class="video">
-				<iframe width="560" height="315" src="http://www.youtube.com/embed/zfyhh4PdJmU" frameborder="0" allowfullscreen></iframe>
+				<div class="row">
+					<div class="large-2 columns">
+					</div>
+					<div class="large-8 columns">
+						<iframe width="560" height="315" src="http://www.youtube.com/embed/zfyhh4PdJmU" frameborder="0" allowfullscreen></iframe>
+					</div>
+					<div class="large-2 columns">
+					</div>
+				</div>
 			</div>
 
 			<div id="cartApp">
-				<p>Update Items: <button class="update" type="button">Update</button></p>
-				{{#each product}}
-				<h2>Title:  <b>{{productTitle}}</b></h2>
-				<p>Quantity:  <b>{{quantity}}</b></p>
-				<p>Monthly Cost:  <b>${{monthlyCost}}</b></p>
-				<p>Upfront Cost:  <b>${{upfrontCost}}</b></p>
-				{{/each}}
+				<div class="row">
+					<div class="large-2 columns">
+					</div>
+					<div class="large-8 columns">
+						<p>Update Items: <button class="update" type="button">Update</button></p>
+							<ul class="pricing-table">
+							{{#each product}}
+								<li class="title">{{productTitle}}</li>
+								<li class="price">Monthly: ${{monthlyCost}}</li>
+								<li class="price">Upfront: ${{upfrontCost}}</li>
+								<li class="bullet-item">Quantity: {{quantity}}</li>
+							{{/each}}
+						</ul>
+					</div>
+					<div class="large-2 columns">
+					</div>
+				</div>
 
 			</div>
 
 		</script>
 		<script src="blaze.js"></script>
 		<script src="cart.js"></script>
-	</head>
-	<body>
 	</body>
 </html>

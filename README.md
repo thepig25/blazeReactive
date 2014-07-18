@@ -4,6 +4,7 @@ Blaze Reactive
 
 ## Running it
 
+* bower install
 * npm install
 * npm start
 * And navigate to `localhost:4300`
