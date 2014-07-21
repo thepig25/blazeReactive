@@ -88,7 +88,7 @@ var ProductLine = React.createClass({
 });
 
 React.renderComponent(
-	<ReactCart  url="testingJson.json" />,
+	<ReactCart  url="/mockData/updatedJson.json" />,
 	document.getElementById('reactCart')
 );
 /*jshint ignore:end*/
