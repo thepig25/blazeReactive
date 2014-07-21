@@ -1,4 +1,4 @@
-A comparison Between Meteor's Blaze.js and Facebook's React
+A comparison between Meteor's Blaze.js and Facebook's React
 =======
 
 ## What and Why
@@ -24,7 +24,7 @@ npm start
 And navigate to `localhost:4300`
 ```
 * Running Blaze:
-** No extra steps for now.
+No extra steps for now.
 * Running React:
 ```sh
 npm install -g react-tools (First Time Only)
