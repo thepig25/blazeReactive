@@ -12,7 +12,7 @@ var ReactCart = React.createClass({
 
 		/*jshint ignore:start*/
 		return (
-			<div className="reactCart panel">
+			<div className="reactCart">
 
 				<p>Update Items: </p>
 				<ul className="pricing-table">
