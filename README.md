@@ -17,6 +17,11 @@ A comparison Between Blaze.js and React
 * npm install
 * npm start
 * And navigate to `localhost:4300`
+* Running Blaze:
+** No extra steps for now.
+* Running React:
+** npm install -g react-tools
+** jsx --watch src/ /public/build/
 
 ## Page Details:
 * Home Page

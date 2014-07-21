@@ -2,7 +2,15 @@
 .idea
 *.iml
 
+### Node ###
+# Logs
+logs
+*.log
+
 # Dependencies
 node_modules
 bower_components
+
+# Compiled files
+public/build
 

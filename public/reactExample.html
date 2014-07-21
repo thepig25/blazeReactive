@@ -4,7 +4,8 @@
 		<link rel="stylesheet" href="bower_components/foundation/css/foundation.css" />
         <script src="bower_components/foundation/js/vendor/modernizr.js"></script>
         <script src="bower_components/foundation/js/vendor/jquery.js"></script>
-         <script src="bower_components/foundation/js/foundation.min.js"></script>
+        <script src="bower_components/foundation/js/foundation.min.js"></script>
+        <script src="bower_components/react/react.min.js"></script>
 	</head>
 	<body>
 		<div class="contain-to-grid sticky">
@@ -53,7 +54,12 @@
 					&nbsp;
 				</div>
 				<div class="large-8 columns">
-					&nbsp;
+					<!-- React's container -->
+					<div id="reactCart" class="panel"></div>
+
+					<!-- Application components. A build step would be nice here. -->
+					<script src="build//ReactCart.js"></script>
+
 				</div>
 				<div class="large-2 columns">
 					&nbsp;
