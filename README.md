@@ -1,4 +1,4 @@
-A comparison Between Blaze.js and React
+A comparison Between Meteor's Blaze.js and Facebook's React
 =======
 
 ## What and Why
