@@ -79,7 +79,7 @@ var ProductLine = React.createClass({
 		return (
 			<div className="ProductLine">
 				<li className="title">{this.props.title}</li>
-				<li className="price">Monthly: ${this.props.Monthly}</li>
+				<li className="price">Monthly: ${this.props.monthly}</li>
 				<li className="price">Upfront: ${this.props.upfront}</li>
 				<li className="bullet-item">Quantity: {this.props.title}</li>
 			</div>

@@ -23,7 +23,7 @@
 				<section class="top-bar-section">
 					<ul class="right">
 
-						<li>
+						<li class="active">
 							<a href="blazeExample.html">Blaze Example</a>
 						</li>
 
@@ -56,7 +56,9 @@
 				</div>
 				<div class="large-8 columns">
 					<div class="panel">
-						<iframe width="560" height="315" src="http://www.youtube.com/embed/zfyhh4PdJmU" frameborder="0" allowfullscreen></iframe>
+						<div class="flex-video">
+							<iframe width="560" height="315" src="http://www.youtube.com/embed/zfyhh4PdJmU" frameborder="0" allowfullscreen></iframe>
+						</div>
 					</div>
 				</div>
 				<div class="large-2 columns">
@@ -92,7 +94,11 @@
 			</div>
 
 		</script>
+		<script>
+			$(document).foundation();
+		</script>
 		<script src="blaze.js"></script>
 		<script src="BlazeCart.js"></script>
+
 	</body>
 </html>
