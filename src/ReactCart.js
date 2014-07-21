@@ -23,6 +23,20 @@ var ReactCart = React.createClass({
 	getInitialState: function() {
 		return {data: []};
 	},
+	handleUpdateSubmit: function(product) {
+		$.ajax({
+			url: this.props.url,
+			dataType: 'json',
+			type: 'POST',
+			data: comment,
+			success: function(data) {
+				this.setState({data: data});
+			}.bind(this),
+			error: function(xhr, status, err) {
+				console.error(this.props.url, status, err.toString());
+			}.bind(this)
+		});
+	},
 	componentDidMount: function() {
 		$.ajax({
 			url: this.props.url,
@@ -39,8 +53,10 @@ var ReactCart = React.createClass({
 
 		return (
 			<div className="reactCart">
+				<ReloadData onCommentSubmit={this.handleUpdateSubmit} url="/mockData/updatedJson.json"/>
 				<Products data={this.state.data} />
 			</div>
+
 		);
 
 
@@ -85,6 +101,16 @@ var ProductLine = React.createClass({
 			</div>
 		);
 	}
+});
+// tutorial15.js
+var ReloadData = React.createClass({
+	render: function() {
+		return (
+				<p>
+					Update Items: <button className="update" type="button">Update</button>
+				</p>
+		);
+  	}
 });
 
 React.renderComponent(
