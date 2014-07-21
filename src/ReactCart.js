@@ -6,22 +6,40 @@
 /* jshint unused:false */
 
 
-var ReactCart = React.createClass({
+// $.ajax({
+// 	url: "/mockData/testingJson.json",
+// 		//force to handle it as text
+// 		dataType: "text",
+// 		success: function (dataTest) {
+// 			//data downloaded so we call parseJSON function
+// 			//and pass downloaded data
+// 			var json = $.parseJSON(dataTest);
+// 			cartData = json;
+// 		}
+// });
 
+var ReactCart = React.createClass({
+	getInitialState: function() {
+		return {data: []};
+	},
+	componentDidMount: function() {
+		$.ajax({
+			url: this.props.url,
+				dataType: 'json',
+				success: function(data) {
+				this.setState({data: data});
+			}.bind(this),
+				error: function(xhr, status, err) {
+				console.error(this.props.url, status, err.toString());
+			}.bind(this)
+		});
+	},
 	render: function () {
 
 		/*jshint ignore:start*/
 		return (
 			<div className="reactCart">
-
-				<p>Update Items: </p>
-				<ul className="pricing-table">
-					<li className="title"></li>
-					<li className="price">Monthly: $</li>
-					<li className="price">Upfront: $</li>
-					<li className="bullet-item">Quantity</li>
-				</ul>
-
+				<Products data={this.state.data} />
 			</div>
 		);
 
@@ -30,8 +48,47 @@ var ReactCart = React.createClass({
 
 
 });
+
+var Products = React.createClass({
+
+	render: function () {
+
+		/*jshint ignore:start*/
+		var productNodes = this.props.data.map(function (product) {
+			return (
+				<ProductLine
+					title={product.productTitle}
+					monthly={product.monthlyCost}
+					upfront={product.upfrontCost}
+					quantity={product.quantity}
+				>
+				</ProductLine>
+		    )
+		});
+		return (
+			<ul className="pricing-table">
+				{productNodes}
+			</ul>
+		);
+	}
+
+});
+
+var ProductLine = React.createClass({
+	render: function() {
+		return (
+			<div className="ProductLine">
+				<li className="title">{this.props.title}</li>
+				<li className="price">Monthly: ${this.props.Monthly}</li>
+				<li className="price">Upfront: ${this.props.upfront}</li>
+				<li className="bullet-item">Quantity: {this.props.title}</li>
+			</div>
+		);
+	}
+});
+
 React.renderComponent(
-	<ReactCart />,
+	<ReactCart  url="testingJson.json" />,
 	document.getElementById('reactCart')
 );
 /*jshint ignore:end*/
