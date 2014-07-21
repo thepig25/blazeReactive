@@ -1,9 +1,10 @@
+/*global Blaze, Template*/
 var cartData = new Blaze.Var();
 
 $.ajax({
-	url: "/mockData/testingJson.json",
+	url: '/mockData/testingJson.json',
 		//force to handle it as text
-		dataType: "text",
+		dataType: 'text',
 		success: function (dataTest) {
 			//data downloaded so we call parseJSON function
 			//and pass downloaded data
@@ -15,9 +16,9 @@ $.ajax({
 Template.main.events({
 	'click .update': function () {
 		$.ajax({
-			url: "/mockData/updatedJson.json",
+			url: '/mockData/updatedJson.json',
 			//force to handle it as text
-				dataType: "text",
+				dataType: 'text',
 					success: function (dataTest) {
 
 					//data downloaded so we call parseJSON function

@@ -1,3 +1,4 @@
+
 /**
  * The shopping cart product component.
  * @jsx React.DOM
@@ -17,7 +18,7 @@
 // 			cartData = json;
 // 		}
 // });
-
+/*jshint ignore:start*/
 var ReactCart = React.createClass({
 	getInitialState: function() {
 		return {data: []};
@@ -36,7 +37,6 @@ var ReactCart = React.createClass({
 	},
 	render: function () {
 
-		/*jshint ignore:start*/
 		return (
 			<div className="reactCart">
 				<Products data={this.state.data} />
@@ -53,7 +53,7 @@ var Products = React.createClass({
 
 	render: function () {
 
-		/*jshint ignore:start*/
+
 		var productNodes = this.props.data.map(function (product) {
 			return (
 				<ProductLine
@@ -88,7 +88,7 @@ var ProductLine = React.createClass({
 });
 
 React.renderComponent(
-	<ReactCart  url="/mockData/updatedJson.json" />,
+	<ReactCart  url="/mockData/testingJson.json" />,
 	document.getElementById('reactCart')
 );
 /*jshint ignore:end*/
