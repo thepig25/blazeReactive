@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Blaze v React</title>
+		<title>Blaze Test</title>
 		<link rel="stylesheet" href="bower_components/foundation/css/foundation.css" />
         <script src="bower_components/foundation/js/vendor/modernizr.js"></script>
         <script src="bower_components/foundation/js/vendor/jquery.js"></script>
@@ -35,39 +35,59 @@
 				</section>
 			</nav>
 		</div>
-
 		<div class="mainDetails">
 			<div class="row">
 				<div class="large-2 columns">
 					&nbsp;
 				</div>
 				<div class="large-8 columns">
-					<h1> A Comparison of Blaze v React </h1>
-				</div>
-				<div class="large-2 columns">
-					&nbsp;
-				</div>
-			</div>
-			<div class="row">
-				<div class="large-2 columns">
-					&nbsp;
-				</div>
-				<div class="large-8 columns">
-					<h4>Compare Blaze v React based on the following criteria</h4>
-					<ol>
-						<li>Performance</li>
-						<li>Scalability</li>
-						<li>Maintainability</li>
-						<li>Browser Support</li>
-						<li>Mobile Device Performace(Render speed and Animation)</li>
-						<li>Ease of Use</li>
-					</ol>
+					<h1> React Example </h1>
 				</div>
 				<div class="large-2 columns">
 					&nbsp;
 				</div>
 			</div>
 		</div>
+		<script type="text/spacebars" name="main">
+			<div class="video">
+				<div class="row">
+					<div class="large-2 columns">
+						&nbsp;
+					</div>
+					<div class="large-8 columns">
+						<iframe width="560" height="315" src="http://www.youtube.com/embed/zfyhh4PdJmU" frameborder="0" allowfullscreen></iframe>
+					</div>
+					<div class="large-2 columns">
+						&nbsp;
+					</div>
+				</div>
+			</div>
 
+			<div id="cartApp">
+				<div class="row">
+					<div class="large-2 columns">
+						&nbsp;
+					</div>
+					<div class="large-8 columns">
+						<p>Update Items: <button class="update" type="button">Update</button></p>
+							<ul class="pricing-table">
+							{{#each product}}
+								<li class="title">{{productTitle}}</li>
+								<li class="price">Monthly: ${{monthlyCost}}</li>
+								<li class="price">Upfront: ${{upfrontCost}}</li>
+								<li class="bullet-item">Quantity: {{quantity}}</li>
+							{{/each}}
+						</ul>
+					</div>
+					<div class="large-2 columns">
+						&nbsp;
+					</div>
+				</div>
+
+			</div>
+
+		</script>
+		<script src="blaze.js"></script>
+		<script src="cart.js"></script>
 	</body>
 </html>
