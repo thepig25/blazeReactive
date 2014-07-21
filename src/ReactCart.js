@@ -5,7 +5,6 @@
 
 /* jshint unused:false */
 
-var React = require('react');
 
 var ReactCart = React.createClass({
 
