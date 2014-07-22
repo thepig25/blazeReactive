@@ -66,6 +66,7 @@
 				</div>
 			</div>
 		</div>
+
 		<script type="text/spacebars" name="main">
 
 			<div id="cartApp">
@@ -74,17 +75,24 @@
 						&nbsp;
 					</div>
 
+
 					<div class="large-8 columns">
 						<div class="panel">
 							<p>Update Items: <button class="update" type="button">Update</button></p>
-							<ul class="pricing-table">
-								{{#each product}}
-									<li class="title">{{productTitle}}</li>
-									<li class="price">Monthly: ${{monthlyCost}}</li>
-									<li class="price">Upfront: ${{upfrontCost}}</li>
-									<li class="bullet-item">Quantity: {{quantity}}</li>
-								{{/each}}
-							</ul>
+							<dl class="accordion" data-accordion>
+								<dd class="accordion-navigation">
+									{{#each product}}
+										<a href="#tab_{{id}}">{{productTitle}}</a>
+    									<div id="tab_{{id}}" class="content">
+											<ul class="pricing-table">
+												<li class="price">Monthly: ${{monthlyCost}}</li>
+												<li class="price">Upfront: ${{upfrontCost}}</li>
+												<li class="bullet-item">Quantity: {{quantity}}</li>
+											</ul>
+										</div>
+									{{/each}}
+								</dd>
+							</dl>
 						</div>
 					</div>
 					<div class="large-2 columns">
@@ -93,7 +101,6 @@
 				</div>
 
 			</div>
-
 		</script>
 		<script>
 			$(document).foundation();

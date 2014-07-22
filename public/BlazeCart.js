@@ -10,6 +10,7 @@ $.ajax({
 			//and pass downloaded data
 			var json = $.parseJSON(dataTest);
 			cartData.set(json);
+			Foundation.init();
 		}
 });
 
@@ -35,7 +36,9 @@ Template.main.events({
 Template.main.helpers({
 	product: function () {
 		return cartData.get();
+		Foundation.init();
 	}
+
 
 
 });
