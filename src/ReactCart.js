@@ -26,13 +26,11 @@ var ReactCart = React.createClass({
 	handleUpdateSubmit: function(product) {
 		$.ajax({
 			url: '/mockData/updatedJson.json',
-			dataType: 'json',
-			type: 'POST',
-			data: comment,
-			success: function(data) {
-				this.setState({data: data});
+				dataType: 'json',
+				success: function(data) {
+					this.setState({data: data});
 			}.bind(this),
-			error: function(xhr, status, err) {
+				error: function(xhr, status, err) {
 				console.error(this.props.url, status, err.toString());
 			}.bind(this)
 		});
@@ -105,13 +103,13 @@ var ProductLine = React.createClass({
 
 var ReloadData = React.createClass({
 	handleSubmit: function() {
-		return false;
+		this.props.onUpdateSubmit();
 	},
 	render: function() {
 		return (
-				<form className="ReloadData" onSubmit={this.handleSubmit}>
-					<input type="submit" value="Post" />
-				</form>
+				<p>Update Items:&nbsp;
+					<button className="update" type="button" onClick={this.handleSubmit}>Update</button>
+				</p>
 		);
   	}
 });
