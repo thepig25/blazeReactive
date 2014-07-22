@@ -7,17 +7,6 @@
 /* jshint unused:false */
 
 
-// $.ajax({
-// 	url: "/mockData/testingJson.json",
-// 		//force to handle it as text
-// 		dataType: "text",
-// 		success: function (dataTest) {
-// 			//data downloaded so we call parseJSON function
-// 			//and pass downloaded data
-// 			var json = $.parseJSON(dataTest);
-// 			cartData = json;
-// 		}
-// });
 /*jshint ignore:start*/
 var ReactCart = React.createClass({
 	getInitialState: function() {

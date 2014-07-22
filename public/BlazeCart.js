@@ -31,6 +31,7 @@ Template.main.events({
 	  });
 	}
 });
+
 Template.main.helpers({
 	product: function () {
 		return cartData.get();
