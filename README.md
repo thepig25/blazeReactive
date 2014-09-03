@@ -20,8 +20,6 @@ git clone git@github.com:thepig25/blazeReactive.git
 cd blazeReactive
 bower install
 npm install
-npm start
-And navigate to `localhost:4300`
 ```
 * Running Blaze:
 No extra steps for now.
@@ -31,8 +29,8 @@ npm install -g react-tools (First Time Only)
 jsx --watch src/ public/build/
 ```
 
+* Start The app:
 ```sh
-Start The app
 npm start
 And navigate to `localhost:4300`
 ```
