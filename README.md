@@ -28,7 +28,13 @@ No extra steps for now.
 * Running React:
 ```sh
 npm install -g react-tools (First Time Only)
-jsx --watch src/ /public/build/
+jsx --watch src/ public/build/
+```
+
+```sh
+Start The app
+npm start
+And navigate to `localhost:4300`
 ```
 
 ## Site Page Details:
