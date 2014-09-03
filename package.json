@@ -10,7 +10,7 @@
         "express": "3.4.x",
         "nano": "4.4.x",
         "chance": "0.5.x",
-        "foundation": "~5.0"
+        "foundation": "x"
 
     },
     "scripts": {
