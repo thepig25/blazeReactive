@@ -5,6 +5,8 @@
         <script src="bower_components/foundation/js/vendor/modernizr.js"></script>
         <script src="bower_components/foundation/js/vendor/jquery.js"></script>
          <script src="bower_components/foundation/js/foundation.min.js"></script>
+         <script src='http://cdn.ractivejs.org/latest/ractive.js'></script>
+
 	</head>
 	<body>
 		<div class="contain-to-grid sticky">
@@ -23,16 +25,15 @@
 				<section class="top-bar-section">
 					<ul class="right">
 
-						<li class="active">
+						<li>
 							<a href="blazeExample.html">Blaze Example</a>
 						</li>
-						<li>
-							<a href="blazeStyleGuideExample.html">Blaze Style Guide Example</a>
+						<li class="active">
+							<a href="ractivejs.html">Ractive.js Example</a>
 						</li>
 						<li>
 							<a href="reactExample.html">React Example</a>
 						</li>
-
 
 					</ul>
 				</section>
@@ -44,7 +45,7 @@
 					&nbsp;
 				</div>
 				<div class="large-8 columns">
-					<h1> Blaze and Style Guide Example </h1>
+					<h1> Ractive Example </h1>
 				</div>
 				<div class="large-2 columns">
 					&nbsp;
@@ -57,6 +58,13 @@
 				<div class="large-2 columns">
 					&nbsp;
 				</div>
+			
+				<div class="large-2 columns">
+					&nbsp;
+				</div>
+			</div>
+		</div>
+		
 				<div class="large-8 columns">
 					<div class="panel">
 						<div class="flex-video">
@@ -64,13 +72,6 @@
 						</div>
 					</div>
 				</div>
-				<div class="large-2 columns">
-					&nbsp;
-				</div>
-			</div>
-		</div>
-		<script type="text/spacebars" name="main">
-
 			<div id="cartApp">
 				<div class="row">
 					<div class="large-2 columns">
@@ -79,15 +80,18 @@
 
 					<div class="large-8 columns">
 						<div class="panel">
-							<p>Update Items: <button class="update" type="button">Update</button></p>
-							<ul class="pricing-table">
-								{{#each product}}
-									<li class="title">{{productTitle}}</li>
-									<li class="price">Monthly: ${{monthlyCost}}</li>
-									<li class="price">Upfront: ${{upfrontCost}}</li>
-									<li class="bullet-item">Quantity: {{quantity}}</li>
-								{{/each}}
-							</ul>
+							<div class="ractiveTemplate"></div>
+							<script id='template' type='text/ractive'>
+								<p>Update Items: <button class="update" type="button">Update</button></p>
+								<ul class="pricing-table">
+									{{#each .}}
+										<li class="title">{{productTitle}}</li>
+										<li class="price">Monthly: ${{monthlyCost}}</li>
+										<li class="price">Upfront: ${{upfrontCost}}</li>
+										<li class="bullet-item">Quantity: {{quantity}}</li>
+									{{/each}}
+								</ul>
+							</script>
 						</div>
 					</div>
 					<div class="large-2 columns">
@@ -97,12 +101,10 @@
 
 			</div>
 
-		</script>
 		<script>
 			$(document).foundation();
 		</script>
-		<script src="blaze.js"></script>
-		<script src="BlazeCart.js"></script>
+		<script src="ractiveCart.js"></script>
 
 	</body>
 </html>
